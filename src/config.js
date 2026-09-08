@@ -5,7 +5,7 @@ function getConfig() {
 
     return {
         canvasIcalUrl: properties.getProperty("CANVAS_ICAL_URL"),
-        taskListId: properties.getProperty("TASK_LIST_ID"),
+        taskListId: properties.getProperty("GOOGLE_TASK_LIST_ID") || "@default",
         courseNameMap: JSON.parse(courseNameMapRaw),
 
         importPastDue: properties.getProperty("IMPORT_PAST_DUE") === "true",

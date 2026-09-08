@@ -13,10 +13,13 @@ A google apps script that syncs canvas assignments to your google tasks list.
    `CANVAS_ICAL_URL`  
    Your Canvas calendar feed URL.
 
-   `GOOGLE_TASK_LIST_ID`  
-   The ID of the google tasks list you want to sync into.
+   And optionally:
 
-4. Optional: add `COURSE_NAME_MAP` as JSON to rename canvas courses (similar to the nickname feature on canvas) as shown:
+   `GOOGLE_TASK_LIST_ID`  
+   The ID of a google tasks list you want to sync into. Default is your main tasks list, but this can be used for testing or to keep canvas assignments separate.
+
+   `COURSE_NAME_MAP`
+   JSON to rename canvas courses (similar to the nickname feature on canvas) as shown:
    ```json
    {
      "MATH-101": "Calc 1",
@@ -24,9 +27,10 @@ A google apps script that syncs canvas assignments to your google tasks list.
    }
    ```
 
-    and/or `IMPORT_PAST_DUE = true` if you want assignments due before the current date to be imported. Past-due assignments are skipped by default to avoid syncing a bunch of already-completed stuff into your tasks list.
+   `IMPORT_PAST_DUE = true`
+    If you want assignments due before the current date to be imported. Past-due assignments are skipped by default to avoid syncing a bunch of already-completed stuff into your tasks list.
 
-5. Open the apps script project and run the `sync` function. Confirm everything works as expected. Create a time-driven trigger for `sync` to enable automatic syncing.
+5. Open the apps script project and run the `sync` function manually. Confirm everything works as expected. Create a time-driven trigger for `sync` to enable automatic syncing.
 
 ## Notes
 
