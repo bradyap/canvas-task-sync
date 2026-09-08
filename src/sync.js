@@ -62,14 +62,9 @@ function sync() {
             continue;
         }
 
-        const currentDue = existing.due ? existing.due.slice(0, 10) : null;
-
-        const desiredDue = assignment.dueDateKey;
-
         const changed =
             existing.title !== desired.title ||
-            existing.notes !== desired.notes ||
-            currentDue !== desiredDue;
+            existing.notes !== desired.notes;
 
         if (!changed) {
             unchanged++;
@@ -80,7 +75,6 @@ function sync() {
             {
                 title: desired.title,
                 notes: desired.notes,
-                due: desired.due,
             },
             taskListId,
             existing.id,

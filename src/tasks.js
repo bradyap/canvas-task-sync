@@ -48,14 +48,14 @@ function getCanvasUidFromGoogleTask(task) {
 }
 
 function assignmentToTask(assignment) {
-    const notes = [assignment.url, getCanvasMarker(assignment.uid)].join("\n");
+    const notes = [
+        `Due: ${assignment.dueText}`,
+        assignment.url,
+        getCanvasMarker(assignment.uid),
+    ].join("\n");
 
     return {
         title: assignment.title,
-
-        // Google Tasks API stores the date, but discards the time.
-        due: `${assignment.dueDateKey}T00:00:00.000Z`,
-
         notes,
     };
 }
