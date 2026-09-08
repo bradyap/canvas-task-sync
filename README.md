@@ -34,4 +34,6 @@ A google apps script that syncs canvas assignments to your google tasks list.
 
 ## Notes
 
-This project uses canvas's calendar feed rather than their API because many schools restrict students from creating personal API keys. The tradeoff is that the calendar feed only gives us basic assignment/event info, so the project can't detect submissions or do any kind of two-way sync (e.g. you submit an assignment, it automatically is marked completed in your google tasks). 
+This project uses canvas's calendar feed rather than their API because many schools restrict students from creating personal API keys. The tradeoff is that the calendar feed only gives us basic assignment/event info, so the project can't detect submissions or do any kind of two-way sync (e.g. you submit an assignment, it automatically is marked completed in your google tasks).
+
+Due dates are currenlty stored in the first line of notes for each task. This is to allow for manual task scheduling instead of having the task date represent when the assignment is due. Google tasks does have a deadline feature in the UI, but this is not something that is currently accessible via the API.
